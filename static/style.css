@@ -1,0 +1,200 @@
+/* Applying background image to the entire body */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('felix-mooneeram-evlkOfkQ5rE-unsplash.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container for content */
+.container {
+    width: 100%;
+    max-width: 800px; /* Adjust max-width as needed */
+    margin: 40px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.7);  /* Slight transparency to merge with the background */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out; /* Animation for fading in */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Page title */
+.page-title {
+    color: #000;
+    font-size: 48px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    animation: bounce 1s infinite alternate; /* Animation for bouncing effect */
+}
+
+/* Form styling */
+form {
+    width: 100%;
+    margin-bottom: 30px;
+    animation: slideIn 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Input and button styling */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-aligns the input */
+    width: 100%;
+    max-width: 400px;  /* Limit the maximum width of the input */
+}
+
+/* Label styling */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #000;  /* All labels in black */
+}
+
+/* Custom label colors */
+.label-genres { color: #060606; } 
+.label-popularity { color: #020202; } 
+.label-runtime { color: #000000; } 
+.label-year { color: #000000; } 
+.label-topn { color: #000000; } 
+
+/* Input styling */
+input[type="text"],
+input[type="number"] {
+    width: 100%;  /* Takes full width of its container */
+    padding: 10px;
+    margin: 5px 0 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Button styling */
+button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;  /* Button spans the width of the form */
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+/* Styling for movie list */
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Styling for each movie card */
+.movie-card {
+    background-color: #ff0000;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect for movie cards */
+.movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Movie titles styling */
+.movie-title {
+    color: #000000; /* Orange color */
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Results title */
+.results-title {
+    color: #000;
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* No recommendations message */
+.no-recommendations {
+    color: #d9534f; /* Red color */
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* Animation for title and movie details */
+h3 {
+    margin-top: 10px;
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+    animation: slideIn 0.8s ease-in-out;
+}
+
+p {
+    font-size: 14px;
+    color: #ffffff;
+    animation: fadeIn 1s ease-in-out;
+}
+
+strong {
+    color: #ffffff;
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

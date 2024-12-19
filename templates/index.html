@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="background">
+        <div class="container">
+            <h1 class="page-title">Movie Recommendation System</h1>
+            
+            <!-- Form for input filters -->
+            <form action="/recommend" method="get">
+                <div class="form-group">
+                    <label for="genres" class="label-genres">Genres (Comma Separated):</label>
+                    <input type="text" id="genres" name="genres" placeholder="Action, Adventure">
+                </div>
+                <div class="form-group">
+                    <label for="min_popularity" class="label-popularity">Minimum Popularity:</label>
+                    <input type="number" id="min_popularity" name="min_popularity" min="0" value="0">
+                </div>
+                <div class="form-group">
+                    <label for="max_runtime" class="label-runtime">Maximum Runtime (minutes):</label>
+                    <input type="number" id="max_runtime" name="max_runtime" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="year_range" class="label-year">Year Range (YYYY-YYYY):</label>
+                    <input type="text" id="year_range" name="year_range" placeholder="2000-2020">
+                </div>
+                <div class="form-group">
+                    <label for="top_n" class="label-topn">Number of Movies to Display:</label>
+                    <input type="number" id="top_n" name="top_n" value="5">
+                </div>
+                <button type="submit">Get Recommendations</button>
+            </form>
+
+            <!-- Displaying recommendations -->
+            {% if recommendations %}
+            <h2 class="results-title">Recommended Movies</h2>
+            <div class="movie-list">
+                {% for movie in recommendations %}
+                <div class="movie-card">
+                    <h3 class="movie-title">{{ movie.title }}</h3>
+                    <p><strong>Genres:</strong> {{ movie.genres }}</p>
+                    <p><strong>Popularity:</strong> {{ movie.popularity }}</p>
+                    <p><strong>Runtime:</strong> {{ movie.runtime }} minutes</p>
+                    <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p class="no-recommendations">No recommendations found with the given criteria.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
